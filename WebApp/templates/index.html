@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans&family=Galada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+     <div class="app-header"><p class="h_text" onclick="window.location.href='/'">Find color Project</p>
+        <p class="h_text1" onclick="window.location.href='/index'" >model</p>
+        <p class="h_text2" onclick="window.location.href='/down'">download</p>
+    </div>
+    <div></div>
+    <div class="drawing">
+        <div class="black_box">
+            <div class="drawing_text">Drawing Pad</div>
+        <div class="input_image" id="input_image">
+            <script>
+                    var container = document.getElementById('input_image');
+                </script>
+            <div class="image_box">
+                {% if filename %}
+                    <img class="img_cs2" onclick="check_position(event); pos_upload()" src="{{filename[-1]}}">
+                {% endif %}
+            </div>
+        </div>
+        </div>
+        <form method="post" action="/pos">
+            <input type="text" id="x_pos" value="" name="x_pos">
+            <input type="text" id="y_pos" value="" name="y_pos">
+            <input type="submit" id="pos">
+        </form>
+        <div class="button_part">
+            <button class="l_b" onclick="openFileUpload()" type="button">Load</button>
+
+            <button class="r_b" onclick="saveResult()" type="button">Save</button>
+            <script>
+
+            var container = document.getElementById('input_image');
+            function saveResult(){
+                document.getElementById("download").click();
+            }
+            function pos_upload(){
+                document.getElementById("pos").click();
+            }
+            function check_position(event){
+                const element = document.getElementById('x_pos');
+                const element1 = document.getElementById('y_pos');
+                element.value = event.offsetX;
+                element1.value = event.offsetY;
+            }
+
+            function openFileUpload(){
+                document.getElementById("hiddenFile").click();
+                var files = document.getElementsByName("Upload");
+                files[0].select();
+                document.selection.clear();
+
+            }
+            function loadFile(input){
+                var file = input.files[0];
+                var newImage = document.createElement("img");
+                newImage.setAttribute("class", 'img');
+                newImage.src = URL.createObjectURL(file);
+                newImage.style.width = "100%";
+                newImage.style.height = "100%";
+                newImage.style.objectFit="contain";
+                var container2 = document.getElementById('output_image');
+                container.innerHTML= '';
+                container2.innerHTML='';
+                container.appendChild(newImage);
+            }
+            </script>
+        </div>
+    </div>
+
+    <div class="result">
+        <div class="black_box">
+            <div class="result_text">Result Image</div>
+            <div class="output_image" id="output_image">
+                {% if filename %}
+                <div class="image_box">
+                    <img class="img_cs" src="{{result[-1]}}">
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="button_part">
+            <button class="l_b" onclick="restart();" type="button">Restart</button>
+            <button class="r_b" onclick="quit()" type="button">Quit</button>
+            <script>
+                document.getElementById("restart").addEventListener("click", clear);
+                document.getElementById("quit").addEventListener("click", clear);
+                function restart(){
+                    document.getElementById("restart").click();
+                }
+                function quit(){
+                    document.getElementById("quit").click();
+                }
+            </script>
+
+        </div>
+    </div>
+     <div>
+        <div style="margin-top: 50vh">
+            <div></div>
+             <button class="colorize" style="margin-left: 3vw; font-size: 2em;" onclick="openResultupload()" type="button">Colorize</button>
+                <script>
+                function check_position_g(event){
+                    const element = document.getElementById('x_pos2');
+                    const element1 = document.getElementById('y_pos2');
+                    element.value = event.offsetX;
+                    element1.value = event.offsetY;
+                }
+                function pos2_upload(){
+                    document.getElementById("pos2").click();
+                }
+                function openResultupload() {
+                    document.getElementById("colorize").click();
+                }
+                function loadResult() {
+                    var file = "{{result_img}}";
+                    var newImage = document.createElement("img");
+                    newImage.setAttribute("class", 'img');
+                    newImage.src = "{{file_name}}";
+                    newImage.style.width = "100%";
+                    newImage.style.height = "100%";
+                    newImage.style.objectFit = "contain";
+                    var container = document.getElementById('output_image');
+                    container.innerHTML = '';
+                    container.appendChild(newImage);
+                }
+
+                </script>
+        </div>
+    </div>
+    <form method="post" action="/upload" enctype="multipart/form-data">
+            <input type="file" id="hiddenFile" name="file" accept="image/*" onchange="loadFile(this)" style="visibility:hidden">
+            <input type="submit" id="colorize" style="visibility:hidden">
+    </form>
+    <form method="post" action="/download">
+            <input type="submit" id="download" style="visibility:hidden">
+    </form>
+    </form>
+    <form method="post" action="/restart">
+            <input type="submit" id="restart" style="visibility:hidden">
+    </form>
+    </form>
+    <form method="post" action="/quit">
+            <input type="submit" id="quit" style="visibility:hidden">
+    </form>
+</body>
+</html>

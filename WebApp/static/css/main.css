@@ -1,0 +1,273 @@
+body{
+    margin: 0;
+    font-family: 'Albert Sans', sans-serif;
+    -ms-overflow-style: none;
+ }
+html{
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.m1{
+    width: 100%;
+    height: 90vh;
+    display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 50vh 5vh; text-align: center;
+    background: #081640;
+}
+.m1-1{
+    margin-top: 28vh;
+    color:white;
+    font-size: 5em;
+    font-family: 'Playfair Display SC', serif;
+}
+
+.m2{
+    margin-top: 12vh;
+    font-size: 3em;
+    font-family: 'Playfair Display SC', serif;
+}
+.m2-2{
+    font-family: 'Playfair Display SC', serif;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 13vh;
+ }
+.p1{
+    color:white;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.2em;
+}
+
+.p2{
+    margin-top: 5vh;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.app-header{
+    width: 100%;
+    height: 10vh;
+    background: #081640;
+    font-size: 2.2em;
+    color: white;
+    line-height : 4vh;
+    font-family: 'Galada', cursive;
+    display: flex;
+}
+
+.gamut{
+    float: left;
+    border-radius: 15px;
+    width: 15vw;
+    height: 55vh;
+    margin-left: 2.5vw;
+    margin-top: 3vw;
+    text-align: center;
+    background-color: lightgray;
+}
+.gamut_box{
+    width: 13vw;
+    margin-left:1vw;
+    height:23vh;
+    margin-top: 0.9vh;
+    background-color: white;
+}
+.gamut_text{
+    margin-top:1.8vh;
+    font-weight:bold;
+}
+.suggested_box1{
+    width: 13vw;
+    margin-left:1vw;
+    height:2vw;
+     margin-top: 0.9vh;
+    background-color: white;
+}
+.suggested_box2{
+    width: 13vw;
+    margin-left:1vw;
+    height:2vw;
+     margin-top: 0.9vh;
+    background-color: white;
+}
+.color_box{
+    width: 13vw;
+    margin-left:1vw;
+    height: 15vh;
+    margin-top: 0.9vh;
+    background-color: white;
+}
+
+#x_pos{
+     display:none;
+}
+#y_pos{
+     display:none;
+}
+#pos{
+     display:none;
+}
+
+#x_pos2{
+     display:none;
+}
+#y_pos2{
+     display:none;
+}
+#pos2{
+     display:none;
+}
+.drawing{
+    float: left;
+    width: 35vw;
+    height: 75vh;
+    margin-left: 4vw;
+    margin-top: 3vw;
+    text-align: center;
+}
+.drawing_text{
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    font-weight:bolder;
+    font-size: 1.2em;
+}
+.result_text{
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    font-weight:bolder;
+    font-size: 1.2em;
+}
+
+.black_box{
+    width: 35vw;
+    height: 65vh;
+    color: white;
+    background-color: #282828;
+}
+.input_image{
+    background-color: lightgray;
+    height: 55vh;
+}
+.output_image{
+    background-color: lightgray;
+    height: 55vh;
+}
+
+.img_cs{
+    width: 35vw;
+    height: 55vh;
+    object-fit: contain;
+}
+
+
+.img_cs2{
+    width: 35vw;
+    height: 55vh;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.img_re{
+    width: 35vw;
+    height: 55vh;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.img_gamut{
+    width: 13vw;
+    height: 13vw;
+    object-fit: contain;
+    cursor:pointer;
+}
+.result{
+    float: left;
+    width: 35vw;
+    height: 75vh;
+    margin-left: 4vw;
+    margin-top: 3vw;
+    text-align: center;
+}
+.h_text{
+    margin-left: 3vw;
+    float: left;
+    cursor: pointer;
+    flex: 1;
+}
+.h_text1{
+    float: right;
+    margin-right: 3vw;
+    cursor: pointer;
+}
+.h_text2{
+    float: right;
+    margin-right: 2vw;
+    cursor: pointer;
+}
+.button_part{
+    margin-top: 4vh;
+}
+.l_b{
+    width: 16vw;
+    height: 6vh;
+    font-family: 'Nanum Gothic', sans-serif;
+    float:left;
+    background-color: blue;
+    border-radius: 15px;
+    outline: 0;
+    border: 0;
+    font-size: 1.3em;
+    color: white;
+    font-weight:bold;
+    cursor: pointer;
+}
+.r_b{
+    width: 16vw;
+    font-family: 'Nanum Gothic', sans-serif;
+    margin-left: 3vw;
+    height: 6vh;
+    float:left;
+    border-radius: 15px;
+    outline: 0;
+    border: 0;
+    font-size: 1.3em;
+    font-weight:bold;
+    cursor: pointer;
+}
+.down{
+      width: 16vw;
+      height: 6vh;
+      border-radius: 30px;
+      outline: 0;
+      border: 0;
+      font-size: 1.5em;
+      font-weight:bold;
+      cursor: pointer;
+      background: gray;
+      color: white;
+      text-align: center;
+      line-height : 6vh;
+      font-family: 'Nanum Gothic', sans-serif;
+      margin-left: 42%;
+}
+.cb_part{
+    margin-top: 14vh;
+}
+.colorize{
+    width: 15vw;
+    height: 15vw;
+    float:left;
+    border-radius: 15px;
+    outline: 0;
+    border: 0;
+    font-size: 2em;
+    font-weight:bold;
+    cursor: pointer;
+    color:white;
+    background-color: #000069;
+    font-family: 'Nanum Gothic', sans-serif;
+}

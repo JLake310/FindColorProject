@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans&family=Galada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+   <div class="app-header"><p class="h_text" onclick="window.location.href='/'">Find color Project</p>
+        <p class="h_text1" onclick="window.location.href='/index'" >model</p>
+        <p class="h_text2" onclick="window.location.href='/down'">download</p>
+    </div>
+     <div style="width: 100%; height: 90vh; text-align: center;">
+         <p class="m2" style="color: black; padding-top: 25vh;">Download Our Model</p>
+         <a href="https://github.com/SaebyeolShin/Colorization_UI" style="text-decoration: none;"><div class="down">See on Github</div></a>
+     </div>
+    <div style="width: 100%; height: 100vh; text-align: center; background: #081640;">
+       <p class="m2" style="color: white; padding-top: 10vh">How to Use?</p>
+        <p class="p1" style="padding-top: 6vh">1. 상단 링크에 접속해서 Pretrained Models의 모델을 모두 다운 받는다.</p>
+        <p class="p1" style="padding-top: 6vh">2. 상단 링크의 Installation을 그대로 실행한다.</p>
+        <p class="p1" style="padding-top: 6vh">3. clone한 폴더에 /saved_models/best/ 폴더를 각각 만들고 그 안에 Pretrained Models에서 받은 모델 파일을 올린다.</p>
+        <p class="p1" style="padding-top: 6vh">4. pycharm을 다운로드하고 anaconda prompt를 설치한다. <br><br>
+            <a href="https://www.jetbrains.com/pycharm/download/#section=windows" style="color: white;">
+                https://www.jetbrains.com/pycharm/download/#section=windows</a>
+        </p>
+        <p class="p1" style="padding-top: 6vh">5. 노트북에 python3를 다운로드하고 실행 가능하게 설정한다. <br><br>
+        <a href="https://www.python.org/downloads/"  style="color: white;"> https://www.python.org/downloads/</a>
+        </p>
+        <p class="p1" style="padding-top: 6vh">6. anaconda prompt를 통해 clone한 폴더에 접근하여 python3 colorize_ui.py 명령어를 입력한다.</p>
+    </div>
+</body>
+</html>
