@@ -38,7 +38,7 @@ PSNR
 
 <img src="https://user-images.githubusercontent.com/86578246/210068936-c32232f0-b4d8-4bde-97f9-c66f60f5cc8c.png" height="200px">
 
-Survey
+Survey 
 
 <img src="https://user-images.githubusercontent.com/86578246/210068975-bd801f39-0873-4e32-a169-6433b57d7a71.png" height="200px">
 
